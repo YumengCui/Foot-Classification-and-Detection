@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testFoot2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Mmp-dd-NkR" userLabel="Combined View">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HLL-Zc-jg2" userLabel="topBar">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="45"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NMr-h9-dN9">
+                                                <rect key="frame" x="0.0" y="7" width="321.33333333333331" height="32"/>
+                                                <segments>
+                                                    <segment title="Image Classification"/>
+                                                    <segment title="Object Detection"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="changeMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="vd1-TQ-JFc"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghb-w7-TEg" userLabel="cameraButton">
+                                                <rect key="frame" x="331.33333333333331" y="11.666666666666664" width="27.666666666666686" height="22"/>
+                                                <state key="normal" image="camera" catalog="system"/>
+                                                <connections>
+                                                    <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MH8-NB-zv6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Kdh-Ip-HRb"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BDc-51-FLd">
+                                        <rect key="frame" x="8" y="45" width="359" height="566"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="566" id="s4W-zB-63t"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iF-dt-UBF">
+                                        <rect key="frame" x="8" y="619" width="359" height="99"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuj-id-4JB" userLabel="resultsLabel">
+                                                <rect key="frame" x="8" y="8" width="343" height="83"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="cuj-id-4JB" secondAttribute="bottom" id="QUR-Gm-CYX"/>
+                                            <constraint firstItem="cuj-id-4JB" firstAttribute="leading" secondItem="5iF-dt-UBF" secondAttribute="leadingMargin" id="gPj-3L-wWJ"/>
+                                            <constraint firstItem="cuj-id-4JB" firstAttribute="top" secondItem="5iF-dt-UBF" secondAttribute="topMargin" id="jDU-BD-tsd"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="cuj-id-4JB" secondAttribute="trailing" id="vgo-pG-8Je"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="5iF-dt-UBF" firstAttribute="leading" secondItem="VGV-4f-Uzh" secondAttribute="leading" constant="8" id="09V-eY-uz9"/>
+                                    <constraint firstItem="HLL-Zc-jg2" firstAttribute="leading" secondItem="Mmp-dd-NkR" secondAttribute="leading" constant="8" id="AR6-FI-EaY"/>
+                                    <constraint firstItem="BDc-51-FLd" firstAttribute="top" secondItem="HLL-Zc-jg2" secondAttribute="bottom" id="Cwz-Pm-KN8"/>
+                                    <constraint firstItem="VGV-4f-Uzh" firstAttribute="trailing" secondItem="5iF-dt-UBF" secondAttribute="trailing" constant="8" id="Gxo-DQ-9Qs"/>
+                                    <constraint firstAttribute="trailing" secondItem="HLL-Zc-jg2" secondAttribute="trailing" constant="8" id="Ik4-o2-gUb"/>
+                                    <constraint firstItem="BDc-51-FLd" firstAttribute="leading" secondItem="Mmp-dd-NkR" secondAttribute="leading" constant="8" id="LWf-r9-oU8"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="5iF-dt-UBF" secondAttribute="bottom" constant="8" id="QNw-Ny-Wzv"/>
+                                    <constraint firstAttribute="trailing" secondItem="BDc-51-FLd" secondAttribute="trailing" constant="8" id="cif-IP-Gm9"/>
+                                    <constraint firstItem="HLL-Zc-jg2" firstAttribute="top" secondItem="Mmp-dd-NkR" secondAttribute="top" id="gft-H6-6e1"/>
+                                    <constraint firstItem="5iF-dt-UBF" firstAttribute="top" secondItem="BDc-51-FLd" secondAttribute="bottom" constant="8" id="qjL-mN-QpA"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="VGV-4f-Uzh"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Ghb-w7-TEg" id="Q9r-cQ-Vk2"/>
+                        <outlet property="imageView" destination="BDc-51-FLd" id="GSI-Kz-kVa"/>
+                        <outlet property="modeSegmentedControl" destination="NMr-h9-dN9" id="V9S-u7-DpP"/>
+                        <outlet property="resultsLabel" destination="cuj-id-4JB" id="lvv-5D-GBL"/>
+                        <outlet property="resultsView" destination="5iF-dt-UBF" id="ZlB-26-d4t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="137.4384236453202"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="96"/>
+    </resources>
+</document>
